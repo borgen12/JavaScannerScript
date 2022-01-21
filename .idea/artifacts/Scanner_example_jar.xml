@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Scanner-example:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Scanner_example_jar</output-path>
+    <root id="archive" name="Scanner-example.jar">
+      <element id="module-output" name="Scanner-example" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Program Files/Thales/Gemalto Document Reader SDK x64/3.7.1.16/SDK/Libraries/mmmreader.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
