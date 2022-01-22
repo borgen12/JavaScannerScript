@@ -53,7 +53,7 @@ public class ScannerNonBlocking extends JFrame implements DataHandler, ErrorHand
     private SocketClient socket;
 
     public ScannerNonBlocking()throws IOException {
-        this.startSocket();
+       // this.startSocket();
         this.initComponents();
         this.prInitialised = false;
         this.prDetectState = 0;
@@ -164,6 +164,7 @@ public class ScannerNonBlocking extends JFrame implements DataHandler, ErrorHand
     }
 
     public void OnFullPageReaderData(DataType var1, int var2, byte[] var3) {
+        System.out.println("var" + var2);
         boolean var4 = false;
         String var8;
         int var15;

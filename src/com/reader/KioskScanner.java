@@ -80,19 +80,19 @@ public class KioskScanner implements DataHandler{
             ErrorCode var2 = this.prFullPageReader.ReadDocument();
             if (var2 == ErrorCode.NO_ERROR_OCCURRED) {
                 int var3 = 300000;
-                byte[] var4 = new byte[200];
-                int[] var5 = new int[]{200};
-                if (this.prFullPageReader.GetData(DataType.CD_CODELINE, var4, var5) == ErrorCode.NO_ERROR_OCCURRED) {
-                    String var6 = new String(var4, 0, var5[0] - 1);
-                    System.out.println(var6);
-                    if (var6.startsWith("P")) {
-                        var6 = var6.substring(0, 43) + "\r\n" + var6.substring(44, var6.length());
+                byte[] IDataBuffer = new byte[var3];
+                int[] IDataBufferLen = new int[1];
+                IDataBufferLen[0] = 0;
+                System.out.println("here");
+                if (this.prFullPageReader.GetDataLength(DataType.CD_CODELINE_DATA, IDataBufferLen) == ErrorCode.NO_ERROR_OCCURRED) {
+                    IDataBuffer = new byte[IDataBufferLen[0]];
+                    System.out.println("here1");
+                    if (this.prFullPageReader.GetData(DataType.CD_CODELINE, IDataBuffer, IDataBufferLen) == ErrorCode.NO_ERROR_OCCURRED) {
+                         System.out.println("here3");
+                        CodelineData var16 = this.prFullPageReader.ConstructCodelineData(IDataBuffer);
+                        System.out.println("here4");
+                        System.out.println(var16);
                     }
-                    System.out.println("well" +var6);
-
-                    CodelineData var16 = this.prFullPageReader.ConstructCodelineData(var4);
-
-                    System.out.println(var16.Forename);
                 }
 
                 byte[] var8 = new byte[var3];

@@ -64,7 +64,7 @@ public class KioskScannerNon implements DataHandler, ErrorHandler, EventHandler,
                 System.out.println("Initialise successful");
                 this.prInitialised = true;
             }
-        } catch (Throwable var3) {
+         } catch (Throwable var3) {
             System.out.println("Unable to initialise " + var3.toString());
             var3.printStackTrace();
         }
